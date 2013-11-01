@@ -8,8 +8,8 @@ gem 'rails', '3.2.14'
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'sqlite3'
-  #gem 'ruby-debug19'
-  gem 'byebug'
+  gem 'ruby-debug19'
+  #gem 'byebug'
 end
 
 group :production do
