@@ -9,9 +9,11 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @all_ratings = where_ratings 
-    @movies = Movie.order(sort_column + ' ' + sort_direction)
-    @movies = @movies.where(rating:  @all_ratings )
+    session[:ratings] = where_ratings 
+    session[:sort_column] = sort_column
+    session[:sort_direction] = sort_direction
+    @movies = Movie.order(session[:sort_column] + ' ' + session[:sort_direction])
+    @movies = @movies.where(rating:  session[:ratings] )
   end
 
   def new
@@ -44,18 +46,14 @@ class MoviesController < ApplicationController
   
   private
     def sort_column
-      Movie.column_names.include?(params[:sort]) ? params[:sort] : "title"
+      Movie.column_names.include?(params[:sort]) ? params[:sort] : session[:sort_column].nil? || session[:sort_column].empty? ? "title" : session[:sort_column]
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction]  : "asc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction]  : "desc"
     end
     
     def where_ratings
-     if params[:ratings].nil?
-        Movie.all_ratings if @all_ratings.nil?
-     else
-	params[:ratings].keys
-     end
+      params[:ratings].nil? ? session[:ratings].nil? || session[:ratings].empty? ? Movie.all_ratings : session[:ratings] : params[:ratings].keys
     end
 end
