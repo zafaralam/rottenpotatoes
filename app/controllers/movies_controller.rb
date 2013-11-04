@@ -50,7 +50,7 @@ class MoviesController < ApplicationController
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction]  : "desc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction]  : session[:sort_direction].nil? || session[:sort_direction].empty? ? "desc" : session[:sort_direction]
     end
     
     def where_ratings
