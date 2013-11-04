@@ -6,7 +6,7 @@ module ApplicationHelper
     direction = (column == session[:sort_column] && session[:sort_direction] == "asc") ? "desc" : "asc"
     # adding the css class for the th tag
     css_class = (column == session[:sort_column]) ? "hilite" : nil
-    content_tag(:th, link_to(title, {:sort => column, :direction => direction}, {:id => "#{column}_header"}), :class => css_class)
+    content_tag(:th, link_to(title, movies_path(:sort => column, :direction => direction), {:id => "#{column}_header"}), :class => css_class)
 
   end
 end
