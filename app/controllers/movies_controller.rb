@@ -53,7 +53,6 @@ class MoviesController < ApplicationController
     
     def where_ratings
      if params[:ratings].nil?
-        logger.debug(@ll_ratings)
         Movie.all_ratings if @all_ratings.nil?
      else
 	params[:ratings].keys
