@@ -6376,3 +6376,51 @@ Served asset /application.js - 304 Not Modified (1ms)
 
 Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-04 14:50:37 +1100
 Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?direction=asc&sort=title" for 127.0.0.1 at 2013-11-04 14:54:41 +1100
+Processing by MoviesController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"title"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R') ORDER BY title asc[0m
+  Rendered movies/index.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-04 14:54:41 +1100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-04 14:54:41 +1100
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-04 14:54:41 +1100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-04 14:54:41 +1100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?direction=asc&sort=title" for 127.0.0.1 at 2013-11-04 14:55:41 +1100
+Processing by MoviesController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"title"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R') ORDER BY title asc
+  Rendered movies/index.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-04 14:55:41 +1100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-04 14:55:41 +1100
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-04 14:55:41 +1100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-04 14:55:41 +1100
+Served asset /application.js - 304 Not Modified (0ms)
